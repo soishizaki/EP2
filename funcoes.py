@@ -22,4 +22,37 @@ def preenche_frota(frota, nome_navio, linha, coluna, ori, tam):
     
     return frota
 
+# Item 3 
+
+def faz_jogada(tabuleiro, linha, coluna):
+    valor = tabuleiro[linha][coluna]
+    if valor not in (0, 1):
+        return tabuleiro  # ignora se já foi jogado antes
+    
+    if valor == 1: 
+        tabuleiro[linha][coluna] = 'X'
+    else:
+        tabuleiro[linha][coluna] = '-'
+    
+    return tabuleiro
+
+# Item 4 
+def posiciona_frota(frota):
+    tabuleiro = []
+    for i in range(10):
+        linha = []
+        for j in range(10):
+            linha.append(0)
+        tabuleiro.append(linha)
+    
+    for nome_navio in frota:
+        navios = frota[nome_navio]
+        for posicoes_navio in navios:
+            for pos in posicoes_navio:
+                linha = pos[0]
+                coluna = pos[1]
+                tabuleiro[linha][coluna] = 1
+    
+    return tabuleiro
+
 
