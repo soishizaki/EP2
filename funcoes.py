@@ -65,9 +65,9 @@ def afundados(frota, tabuleiro):
         for posicoes_navio in lista_navios:
             afundado = True 
 
-            for posicao in posicoes_navio:
-                linha = posicao[0]
-                coluna = posicao[1]
+            for pos in posicoes_navio:
+                linha = pos[0]
+                coluna = pos[1]
 
                 if tabuleiro[linha][coluna] != 'X':
                     afundado = False
@@ -77,4 +77,25 @@ def afundados(frota, tabuleiro):
                 navios_afundados += 1
 
     return navios_afundados
+
+# Item 6 
+def posicao_valida(frota, linha, coluna, ori, tam):
+    posicoes_novas = define_posicoes(linha, coluna, ori, tam)
+    
+    for pos in posicoes_novas:
+        linha_pos = pos[0]
+        coluna_pos = pos[1]
+        if linha_pos < 0 or linha_pos >= 10 or coluna_pos < 0 or coluna_pos >= 10:
+            return False
+
+    for nome_navio in frota:
+        lista_navios = frota[nome_navio]
+        for posicoes_navio in lista_navios:
+            for posicao_existente in posicoes_navio:
+                linha_existente = posicao_existente[0]
+                coluna_existente = posicao_existente[1]
+                if [linha_existente, coluna_existente] in posicoes_novas:
+                    return False
+    
+    return True
 
