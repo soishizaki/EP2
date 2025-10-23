@@ -12,4 +12,14 @@ def define_posicoes(linha, coluna, ori, tam):
     return pos 
 
 # Item 2
+def preenche_frota(frota, nome_navio, linha, coluna, ori, tam):
+    pos = define_posicoes(linha, coluna, ori, tam)
+
+    if nome_navio not in frota:
+        frota[nome_navio] = [pos]
+    else:
+        frota[nome_navio].append(pos)
+    
+    return frota
+
 
