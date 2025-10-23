@@ -98,4 +98,3 @@ def posicao_valida(frota, linha, coluna, ori, tam):
                     return False
     
     return True
-
