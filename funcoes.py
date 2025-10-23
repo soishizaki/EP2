@@ -1,3 +1,4 @@
+# Item 1
 def define_posicoes(linha, coluna, ori, tam):
     pos = []
     
@@ -9,3 +10,6 @@ def define_posicoes(linha, coluna, ori, tam):
             pos.append([linha, coluna + i])
     
     return pos 
+
+# Item 2
+
