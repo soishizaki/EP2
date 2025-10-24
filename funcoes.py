@@ -98,3 +98,15 @@ def posicao_valida(frota, linha, coluna, ori, tam):
                     return False
     
     return True
+
+# Item 8
+def monta_tabuleiros(tab_j, tab_op):
+    texto_final = ''
+    texto_final += '   0  1  2  3  4  5  6  7  8  9         0  1  2  3  4  5  6  7  8  9\n'
+    texto_final += '_______________________________      _______________________________\n'
+    for idx in range(10):
+        jg = '  '.join(str(c) for c in tab_j[idx])
+        op = '  '.join(str(c) if str(c) in ['X', '-'] else '0' for c in tab_op[idx])
+        texto_final += f'{idx}| {jg}|     {idx}| {op}|\n'
+    return texto_final
+
