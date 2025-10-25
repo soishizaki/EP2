@@ -1,4 +1,3 @@
-# Item 1
 def define_posicoes(linha, coluna, ori, tam):
     pos = []
     
