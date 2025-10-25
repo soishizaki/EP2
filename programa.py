@@ -1,7 +1,7 @@
-# Item 7
 from funcoes import *
 import random
 
+# Item 7
 frota = {
     "porta-aviões": [],
     "navio-tanque": [],
