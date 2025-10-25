@@ -87,3 +87,26 @@ while True:
     if afundados(frota_oponente, tabuleiro_oponente) == 10:
         print("Parabéns! Você derrubou todos os navios do seu oponente!")
         break
+
+# Item 9
+import random
+
+posicao_valida = False
+while not posicao_valida:
+    linha_op = random.randrange(10)
+    coluna_op = random.randrange(10)
+
+    if [linha_op, coluna_op] in jogadas_oponente:
+        continue
+    else:
+        jogadas_oponente.append([linha_op, coluna_op])
+        posicao_valida = True
+
+print(f"Seu oponente está atacando na linha {linha_op} e coluna {coluna_op}")
+
+faz_jogada(tabuleiro_jogador, linha_op, coluna_op)
+
+derrota = afundados(frota, tabuleiro_jogador)
+if derrota == 10:
+    print("Xi! O oponente derrubou toda a sua frota =(")
+    break
