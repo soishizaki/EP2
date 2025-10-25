@@ -1,5 +1,6 @@
 # Item 7
 from funcoes import *
+import random
 
 frota = {
     "porta-aviões": [],
@@ -89,8 +90,6 @@ while True:
         break
 
 # Item 9
-import random
-
     posicao_valida = False
     while not posicao_valida:
         linha_op = random.randrange(10)
